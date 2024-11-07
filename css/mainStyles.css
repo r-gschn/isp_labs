@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #C2CAD0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #E7717D;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.labs-box {
+    width: 80%;
+    max-width: 500px;
+    padding: 15px;
+    border: 2px solid #C2CAD0;
+    border-radius: 10px;
+    background-color: #D1CAC2;
+}
+
+.labs {
+    text-align: center;
+}
+
+.buttons-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lab-button {
+    display: inline-block;
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #E7717D;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.lab-button:hover {
+    background-color: #AFD275;
+}
+
+section {
+    background-color: #C2B9B0;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 900px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+h2, h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #7E685A;
+    padding: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #E7717D;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+img {
+    display: block;
+    margin: 5px auto;
+    border-radius: 10px;
+    transform: scale(0.8);
+    transform-origin: center;
+}
+
+.task-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.task-text {
+    flex: 1;
+    margin-right: 10px;
+    margin-bottom: 0;
+    padding: 0;
+    width: 100%;
+}
+
+pre {
+    background-color: #C2B9B0;
+    padding: 5px;
+    border-radius: 10px;
+    overflow-x: auto;
+    max-width: 100%;
+    border: 1px solid #7E685A;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #E7717D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 5px;
+}
+
+button:hover {
+    background-color: #AFD275;
+}

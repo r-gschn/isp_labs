@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гущин, ПИЭ-11</title>
+    <link rel="stylesheet" href="css/mainStyles.css">
+</head>
+<body>
+    <header>
+        <h1>Лабораторная работа №3: Ветвления</h1>
+    </header>
+
+    <section>
+        <h2>Цели, задачи, требования</h2>
+        <p><strong>Цели и задачи работы:</strong> Изучение разветвляющихся алгоритмов, операторов выбора, программирование разветвляющегося вычислительного процесса.</p>
+        <p><strong>Задание к работе:</strong> Реализовать разветвляющийся вычислительный процесс. Самостоятельно решить задачи в соответствии с индивидуальным вариантом.</p>
+        <p><strong>Требования к отчету:</strong> Отчет должен содержать титульный лист, задание, блок-схему алгоритма решения задачи, текст программы с комментариями, тесты.</p>
+    </section>
+
+    <section>
+        <h2>Задание 1</h2>
+        <div class="task-container">
+            <div class="task-text">
+                <p>Дано целое число A. Проверить истинность высказывания: «Число A является нечетным и двузначным».</p>
+                
+                <h3>Код выполнения:</h3>
+                <pre>
+function checkNumber() {
+    let A = parseInt(document.getElementById('numberA').value);
+
+    if (isNaN(A) && A !== null) {
+        document.getElementById('result1').innerText = "Пожалуйста, введите целое число.";
+    } else if (A % 2 !== 0 && A >= 10 && A &lt;= 99) {
+        document.getElementById('result1').innerText = `TRUE`;
+    } else {
+        document.getElementById('result1').innerText = `FALSE`;
+    }
+}
+                </pre>
+                
+                <label for="number1">Введите число A:</label>
+                <input id="number1" required>
+
+                <button onclick="checkNumber()">Выполнить код</button>
+
+                <p id="result1"></p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Задание 2</h2>
+        <div class="task-container">
+            <div class="task-text">
+                <p>Дано целое число. Если оно является положительным и нечетным, то прибавить к нему 1; в противном случае вычесть из него 2. Вывести полученное число.</p>
+                <h3>Код выполнения:</h3>
+                <pre>
+function modifyNumber() {
+    let number2 = parseInt(document.getElementById('number2').value);
+
+    if (isNaN(B)) {
+        document.getElementById('result2').innerText = "Пожалуйста, введите целое число.";
+    } else if (number2 > 0 && number2 % 2 !== 0) {
+        document.getElementById('result2').innerText = number2 + 1;
+    } else {
+        document.getElementById('result2').innerText = number2 - 2;
+    }
+}
+                </pre>
+
+                <label for="number2">Введите число:</label>
+                <input id="number2" required>
+
+                <button onclick="modifyNumber()">Выполнить код</button>
+
+                <p id="result2"></p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Задание 3</h2>
+        <div class="task-container">
+            <div class="task-text">
+                <p>Вычислить значение функции y=f(x) при произвольных значениях x.</p>
+                
+                <h3>Код выполнения:</h3>
+                <pre>
+function calculateFunction() {
+    let x = parseFloat(document.getElementById('numberX1').value);
+    let a = 7.1;
+    let b = 3.2;
+
+    if (isNaN(x) && x !== null) {
+        document.getElementById('result3').innerText = "Пожалуйста, введите число для x.";
+    } else {
+        if (x &lt;= 0) {
+            document.getElementById('result3').innerText = a + 0.5 * Math.exp(-x);
+        } else if (x > 0 && x &lt; 4) {
+            document.getElementById('result3').innerText = Math.sin(b ** 2 * x);
+        } else if (x >= 4) {
+            document.getElementById('result3').innerText = Math.sqrt(x ** 2 + 2 * a);
+        }
+    }
+}
+                </pre>
+                
+                <label for="numberX1">Введите значение x:</label>
+                <input id="numberX1" required>
+
+                <button onclick="calculateFunction()">Выполнить код</button>
+
+                <p id="result3"></p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Задание 4</h2>
+        <div class="task-container">
+            <div class="task-text">
+                <p>Вычислить значение функции y=f(x) при произвольных значениях x. Для вычисления значения функции использовать оператор switch.</p>
+                
+                <h3>Код выполнения:</h3>
+                <pre>
+function calculateSwitchFunction() {
+    let x = parseFloat(document.getElementById('numberX2').value);
+    let a = 7.1;
+    let b = 3.2;
+
+    if (isNaN(x) && x !== null) {
+        document.getElementById('result4').innerText = "Пожалуйста, введите число для x.";
+    } else {
+        switch (x) {
+            case -1:
+                document.getElementById('result4').innerText = a + 0.5 * Math.exp(x);
+                break;
+            case 3:
+                document.getElementById('result4').innerText = Math.sin(b ** 2 * x);
+                break;
+            case 4:
+                document.getElementById('result4').innerText = Math.sqrt(x ** 2 + 2 * a);
+                break;
+            default:
+                document.getElementById('result4').innerText = "Неверное значение x.";
+                break;
+        }
+    }
+}
+                </pre>
+                
+                <label for="numberX2">Введите значение x:</label>
+                <input id="numberX2" required>
+
+                <button onclick="calculateSwitchFunction()">Выполнить код</button>
+
+                <p id="result4"></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Инструментальные средства программирования, 2024</p>
+    </footer>
+
+    <script src="js/mainFunctions.js"></script>
+</body>
+</html>

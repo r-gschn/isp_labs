@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гущин, ПИЭ-11</title>
+    <link rel="stylesheet" href="css/mainStyles.css">
+</head>
+<body>
+    <header>
+        <h1>Лабораторная работа №2: Линейный вычислительный процесс</h1>
+    </header>
+
+    <section>
+        <h2>Цели, задачи, требования</h2>
+        <p><strong>Цели и задачи работы:</strong> изучение функций ввода-вывода данных, программирование вычисления значения выражения.</p>
+        <p><strong>Задание к работе:</strong> реализовать линейный вычислительный процесс. Самостоятельно решить задачу в соответствии с индивидуальным вариантом.</p>
+        <p><strong>Требования к отчету:</strong> отчет должен содержать титульный лист, задание, блок-схему алгоритма решения задачи, текст программы с комментариями, тесты.</p>
+    </section>
+
+    <section>
+        <h2>Задание 1</h2>
+        <div class="task-container">
+            <div class="task-text">
+                <p>Дана сторона квадрата <strong>a</strong>. Найти его площадь: <strong>S = a²</strong>.</p>
+                <h3>Код выполнения:</h3>
+                <pre>
+function calculateSquare() {
+    let a = prompt("Введите сторону квадрата:");
+    if (a !== null && !isNaN(a)) {
+        let S = a * a;
+        alert("Площадь квадрата: " + S);
+    } else {
+        alert("Пожалуйста, введите числовое значение.");
+    }
+}
+                </pre>
+                <button onclick="calculateSquare()">Выполнить код</button>
+            </div>
+            <img src="img/schema1.png" alt="Блок-схема решения задачи" style="max-width:100%; height:auto;">
+        </div>
+    </section>
+
+    <section>
+        <h2>Задание 2</h2>
+        <div class="task-container">
+            <div class="task-text">
+                <p>Дана масса <strong>M</strong> в килограммах. Используя операцию деления нацело, найти количество полных тонн в ней (1 тонна = 1000 кг).</p>
+                <h3>Код выполнения:</h3>
+                <pre>
+function calculateTons() {
+    let M = prompt("Введите массу в килограммах:");
+    if (M !== null && !isNaN(M)) {
+        let tons = Math.floor(M / 1000);
+        alert("Количество полных тонн: " + tons);
+    } else {
+        alert("Пожалуйста, введите числовое значение.");
+    }
+}
+                </pre>
+                <button onclick="calculateTons()">Выполнить код</button>
+            </div>
+            <img src="img/schema2.png" alt="Блок-схема решения задачи" style="max-width:100%; height:auto;">
+        </div>
+    </section>
+
+    <footer>
+        <p>Инструментальные средства программирования, 2024</p>
+    </footer>
+
+    <script src="js/mainFunctions.js"></script>
+</body>
+</html>
