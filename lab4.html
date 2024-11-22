@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гущин, ПИЭ-11</title>
+    <link rel="stylesheet" href="css/mainStyles.css">
+</head>
+<body>
+    <header>
+        <h1>Лабораторная работа №4: Циклы</h1>
+    </header>
+
+    <section>
+        <h2>Цели, задачи, требования</h2>
+        <p><strong>Цели и задачи работы:</strong> Изучение циклических алгоритмов, операторов цикла, программирование циклического вычислительного процесса.</p>
+        <p><strong>Задание к работе:</strong> Реализовать  циклический вычислительный  процесс.  Самостоятельно решить задачи в соответствии с индивидуальным вариантом.</p>
+        <p><strong>Требования к отчету:</strong> Отчет должен содержать титульный лист, задание, блок-схему алгоритма решения задачи, текст программы с комментариями, тесты.</p>
+    </section>
+
+    <section>
+        <h2>Задание 1</h2>
+        <div class="task-container">
+            <div class="task-text">
+                <p>Даны десять вещественных чисел. Найти среднее арифметическое отрицательных чисел.</p>
+                
+                <h3>Код выполнения:</h3>
+                <pre>
+let negativeSum = 0;
+let negativeCount = 0;
+let totalCount = 0;
+
+function calculateAverage() {
+    let input = parseFloat(document.getElementById('number3').value);
+
+    if (isNaN(input)) {
+        document.getElementById('result5').innerText = "Пожалуйста, введите число.";
+        return;
+    }
+
+    totalCount++;
+
+    if (input &lt; 0) {
+        negativeSum += input;
+        negativeCount++;
+    }
+
+    if (totalCount &lt; 10) {
+        document.getElementById('result5').innerText = `Число добавлено. Введено чисел: ${totalCount}/10.`;
+    } else {
+        if (negativeCount == 0) {
+            document.getElementById('result5').innerText = "Отрицательные числа отсутствуют.";
+        } else {
+            const average = negativeSum / negativeCount;
+            document.getElementById('result5').innerText = `Среднее арифметическое отрицательных чисел: ${average}`;
+        }
+
+        negativeSum = 0;
+        negativeCount = 0;
+        totalCount = 0;
+    }
+}
+                </pre>
+                
+                <label for="number3">Введите число:</label>
+                <input id="number3" required>
+                <button onclick="calculateAverage()">Добавить число</button>
+    
+                <p id="result5"></p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section>
+        <h2>Задание 2</h2>
+        <div class="task-container">
+            <div class="task-text">
+                <p>Даны два целых числа A и B (A &lt; B). Вывести в порядке возрастания все целые числа, расположенные между A и B (включая сами числа A и B), а также количество N этих чисел.</p>
+                
+                <h3>Код выполнения:</h3>
+                <pre>
+function printNumbers() {
+    let numberA = parseInt(document.getElementById('numberA').value);
+    let numberB = parseInt(document.getElementById('numberB').value);
+    
+    if (isNaN(numberA) || isNaN(numberB)) {
+        document.getElementById('result6').innerText = "Пожалуйста, введите целые числа.";
+        return;
+    }
+
+    if (numberA >= numberB) {
+        document.getElementById('result6').innerText = "Число A должно быть меньше числа B.";
+        return;
+    }
+
+    let output = "";
+    let count = 0;
+
+    for (let i = numberA; i &lt;= numberB; i++) {
+        output += i + " "
+        count++;
+    }
+
+    document.getElementById('result6').innerText = `Числа: ${output}\nКоличество чисел: ${count}`;
+}
+                </pre>
+    
+                <label for="numberA">Введите число A:</label>
+                <input id="numberA" required>
+                
+                <label for="numberB">Введите число B:</label>
+                <input id="numberB" required>
+                
+                <button onclick="printNumbers()">Выполнить код</button>
+    
+                <p id="result6"></p>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>Инструментальные средства программирования, 2024</p>
+    </footer>
+
+    <script src="js/mainFunctions.js"></script>
+</body>
+</html>

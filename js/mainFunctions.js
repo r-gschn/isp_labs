@@ -1,3 +1,4 @@
+// Лабораторная работа №2
 function calculateSquare() {
     let a = prompt("Введите сторону квадрата:");
     if (a !== null && !isNaN(a)) {
@@ -18,6 +19,7 @@ function calculateTons() {
     }
 }
 
+// Лабораторная работа №3
 function checkNumber() {
     let A = parseInt(document.getElementById('number1').value);
 
@@ -85,3 +87,63 @@ function calculateSwitchFunction() {
     }
 }
 
+// Лабораторная работа №4
+let negativeSum = 0;
+let negativeCount = 0;
+let totalCount = 0;
+
+function calculateAverage() {
+    let input = parseFloat(document.getElementById('number3').value);
+
+    if (isNaN(input)) {
+        document.getElementById('result5').innerText = "Пожалуйста, введите число.";
+        return;
+    }
+
+    totalCount++;
+
+    if (input < 0) {
+        negativeSum += input;
+        negativeCount++;
+    }
+
+    if (totalCount < 10) {
+        document.getElementById('result5').innerText = `Число добавлено. Введено чисел: ${totalCount}/10.`;
+    } else {
+        if (negativeCount == 0) {
+            document.getElementById('result5').innerText = "Отрицательные числа отсутствуют.";
+        } else {
+            const average = negativeSum / negativeCount;
+            document.getElementById('result5').innerText = `Среднее арифметическое отрицательных чисел: ${average}`;
+        }
+
+        negativeSum = 0;
+        negativeCount = 0;
+        totalCount = 0;
+    }
+}
+
+function printNumbers() {
+    let numberA = parseInt(document.getElementById('numberA').value);
+    let numberB = parseInt(document.getElementById('numberB').value);
+    
+    if (isNaN(numberA) || isNaN(numberB)) {
+        document.getElementById('result6').innerText = "Пожалуйста, введите целые числа.";
+        return;
+    }
+
+    if (numberA >= numberB) {
+        document.getElementById('result6').innerText = "Число A должно быть меньше числа B.";
+        return;
+    }
+
+    let output = "";
+    let count = 0;
+
+    for (let i = numberA; i <= numberB; i++) {
+        output += i + " "
+        count++;
+    }
+
+    document.getElementById('result6').innerText = `Числа: ${output}\nКоличество чисел: ${count}`;
+}
