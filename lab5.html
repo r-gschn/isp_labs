@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-quiz</title>
+    <link rel="stylesheet" href="css/quizStyles.css">
+</head>
+<body>
+    <header>
+        <h1>Основы и история технологий</h1>
+    </header>
+
+    <div class="quiz-container">
+        <div id="quiz">
+            <div id="questions"></div>
+            <img id="images" src="">
+            <div id="answers"></div>
+            <button id="next-btn" onclick="nextQuestion()">Следующий вопрос</button>
+        </div>
+        <div id="result-container" style="display: none;">
+            <h2>Результаты:</h2>
+            <p id="result-text"></p>
+            <p>Ваш балл: <span id="score"></span></p>
+            <p>Количество правильных ответов: <span id="correct-answers"></span></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Инструментальные средства программирования, 2024</p>
+    </footer>
+
+  <script src="js/quizFunctions.js"></script>
+</body>
+</html>
